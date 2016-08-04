@@ -1,3 +1,24 @@
+/*====================================================================
+ * | Version: July 7, 2011
+ * \===================================================================*/
+
+/*====================================================================
+ * | July 5, 2106
+ * |
+ * | This code is a branch of the source code maintained by Philippe Thevenaz
+ * | at http://bigwww.epfl.ch/thevenaz/turboreg/
+ * |
+ * | Modified July 5, 2016 to not use the main ImageJ table or reset the
+ * | main ImageJ table
+ * |
+ * | Chris Wood
+ * | Stowers Institue for Medical Research
+ * | 1000 E 50th Kansas City
+ * | Kansas City, MO 64060
+ * | USA
+ * | cjw@stowers.org
+ * \====================================================================*/
+
 /*====================================================================	
 | Version: July 7, 2011
 \===================================================================*/
@@ -1068,14 +1089,12 @@ private ImagePlus alignImages (
 		}
 	}
 	if (interactive) {
-
 		table.show("TurboReg Results"); // table name changed by Chris Wood, July 5, 2016
 	}
 
 	//the follow table reset by Chris Wood July 5, 2016
 	//reset the table so the headings on the new tables aren't modified
 	table.reset();
-
 	source.killRoi();
 	target.killRoi();
 	return(transformImage(source, target.getWidth(), target.getHeight(),
